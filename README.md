@@ -7,3 +7,4 @@ Projeto utiliza: typescript, redux, hooks e tudo de top que tiver
 * routes with redux
 * redux-thunk
 * useCallback
+* i18n
