@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './App.css';
+import './Home.css';
 import { useSelector, useDispatch } from 'react-redux'
-import { CLICK_ADD, CLICK_SUB } from "./store/types";
+import { CLICK_ADD, CLICK_SUB } from "../../../store/types";
 
-const App = () => {
+const Home = () => {
 
   const counterReducer = useSelector((state: any) => state.counterReducer)
   const dispatch = useDispatch()
@@ -25,4 +25,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default Home;
