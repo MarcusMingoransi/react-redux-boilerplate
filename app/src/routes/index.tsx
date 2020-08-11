@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Route, Switch } from 'react-router'
 import Home from '../modules/shared/Home';
 import NoMatch from '../modules/shared/NoMatch'
 
 const routes = (
-  <div>
+  <Suspense fallback="loading">
     <Switch>
       <Route exact path="/" component={Home} />
       <Route component={NoMatch} />
     </Switch>
-  </div>
+  </Suspense>
 )
 
 export default routes

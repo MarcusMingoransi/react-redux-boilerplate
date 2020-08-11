@@ -3,11 +3,16 @@ import './Home.css';
 import { useSelector, useDispatch } from 'react-redux'
 import { CLICK_ADD, CLICK_SUB } from "../../../store/types";
 
+import { useTranslation } from 'react-i18next';
+
 const Home = () => {
 
   const counterReducer = useSelector((state: any) => state.counterReducer)
   const dispatch = useDispatch()
   const [count, setCount] = useState(0)
+
+  const [shared] = useTranslation();
+  const { t, i18n } = useTranslation('home');
 
   return (
     <div className="App">
@@ -20,6 +25,9 @@ const Home = () => {
           Click to ADD
         </button>
         <h1>{ counterReducer }</h1>
+
+        <p>{shared('title')}</p>
+        <p>{t('someText')}</p>
       </header>
     </div>
   );
