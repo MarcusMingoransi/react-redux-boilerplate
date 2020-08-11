@@ -8,3 +8,6 @@ Projeto utiliza: typescript, redux, hooks e tudo de top que tiver
 - [ ] redux-thunk
 - [ ] useCallback
 - [x] i18n
+- [ ] auth-guard
+- [ ] jwt
+- [ ] react-query
