@@ -3,6 +3,10 @@ Projeto utiliza: typescript, redux, hooks e tudo de top que tiver
 
 ## Roadmap
 - [ ] lazy components com split
+- [ ] bootstrap
+- [ ] icons
+- [ ] scss
+- [ ] css Fela
 - [x] routes
 - [x] routes with redux
 - [ ] redux-thunk
