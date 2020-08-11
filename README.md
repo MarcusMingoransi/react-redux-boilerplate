@@ -3,8 +3,8 @@ Projeto utiliza: typescript, redux, hooks e tudo de top que tiver
 
 ## Roadmap
 * lazy components
-* routes
-* routes with redux
+- [x] routes
+- [x] routes with redux
 * redux-thunk
 * useCallback
-* i18n
+- [x] i18n
