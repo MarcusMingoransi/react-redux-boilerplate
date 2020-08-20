@@ -3,6 +3,7 @@ import { connectRouter } from 'connected-react-router'
 
 
 import { counterReducer } from './counterReducer';
+import { themeReducer } from './themeReducer';
 
 // export default combineReducers({
 //     counterReducer
@@ -10,6 +11,7 @@ import { counterReducer } from './counterReducer';
 
 const createRootReducer = (history: any) => combineReducers({
     router: connectRouter(history),
-    counterReducer
+    counterReducer,
+    themeReducer
   })
   export default createRootReducer
