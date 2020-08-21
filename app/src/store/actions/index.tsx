@@ -1,4 +1,4 @@
-import { CLICK_ADD, CLICK_SUB, CLICK_SET_DARK, CLICK_SET_lIGHT } from "../types";
+import { CLICK_ADD, CLICK_SUB, CLICK_SET_THEME } from "../types";
 
 export const clickAddAction = (value: number) => {
     return {
@@ -14,16 +14,9 @@ export const clickSubAction = (value: number) => {
     }
 }
 
-export const setDarkThemeAction = (value: any) => {
+export const setThemeAction = (value: any) => {
     return {
-        type: CLICK_SET_DARK,
-        theme: value
-    }
-}
-
-export const setLightThemeAction = (value: any) => {
-    return {
-        type: CLICK_SET_lIGHT,
+        type: CLICK_SET_THEME,
         theme: value
     }
 }

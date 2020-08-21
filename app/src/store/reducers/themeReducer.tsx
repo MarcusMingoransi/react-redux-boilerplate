@@ -1,14 +1,12 @@
-import { CLICK_SET_DARK, CLICK_SET_lIGHT } from "../types";
-import { customTheme, darkTheme } from "../../shared/Theme";
+import { CLICK_SET_THEME } from "../types";
+import { customTheme } from "../../shared/Theme";
 
 export const themeReducer = (state: any = customTheme, action: any) => {
     console.log('theme: state', state)
     console.log('theme: action', action)
     switch(action.type) {
-    case CLICK_SET_DARK:
-        return darkTheme
-    case CLICK_SET_lIGHT:
-        return customTheme
+    case CLICK_SET_THEME:
+        return action.theme
     default:
         return state;
     }
