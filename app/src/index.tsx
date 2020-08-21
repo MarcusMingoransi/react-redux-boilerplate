@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './styles/scss/index.scss'
 // import Home from './Home';
 import * as serviceWorker from './serviceWorker';
 // import store from './store/index';
