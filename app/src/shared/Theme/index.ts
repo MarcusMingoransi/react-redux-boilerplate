@@ -1,3 +1,5 @@
+import { createMuiTheme } from "@material-ui/core";
+
 export const customTheme = {
     global: {
         font: {
@@ -59,3 +61,42 @@ global: {
     }
 }
 }
+
+export const themeLight = createMuiTheme({
+    palette: {
+      background: {
+        default: "#e4f0e2"
+      },
+      primary: {
+        main: '#a86cc1',
+        light: '',
+        dark: ''
+      },
+      secondary: {
+        main: '#89609e',
+        light: '',
+        dark: ''
+      },
+    }
+  });
+
+  export const themeDark = createMuiTheme({
+    palette: {
+      background: {
+        default: "#222222"
+      },
+      text: {
+        primary: "#ffffff"
+      },
+      primary: {
+        main: '#a86cc1',
+        light: '',
+        dark: ''
+      },
+      secondary: {
+        main: '#89609e',
+        light: '',
+        dark: ''
+      },
+    }
+  });
