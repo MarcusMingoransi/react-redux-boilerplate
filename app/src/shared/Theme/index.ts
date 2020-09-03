@@ -1,102 +1,67 @@
 import { createMuiTheme } from "@material-ui/core";
 
-export const customTheme = {
-    global: {
-        font: {
-            family: "Roboto",
-            size: "14px",
-            height: "10px"
-        },
-        colors: {
-            // Overriding existing grommet colors
-            brand: "#4D4CDB",
-            "dark-1": "#000000",
-            "light-1": "#f8f8f8",
-            "accent-1": "#797979",
-            "accent-2": "#d7d7d7",
-            "accent-3": "#5c5c5c",
-            "accent-4": "#9FFFB0",
-            "neutral-1": "#10873D",
-            "neutral-2": "#20873D",
-            "neutral-3": "#30873D",
-            "neutral-4": "#40873D",
-            focus: "#000",
-            // Setting new colors
-            primary: "#d515d3",
-            primaryLighter: "#f2b9f2",
-            primaryDarker: "#c40cc2",
-            // you can also point to existing grommet colors
-            brightGreen: "accent-1",
-            deepGreen: "neutral-2",
-        },
-    }
+declare module "@material-ui/core/styles/createPalette" {
+  interface Palette {
+    backgroundCard: PaletteColorOptions;
   }
-
-export const darkTheme = {
-global: {
-    font: {
-        family: "Roboto",
-        size: "14px",
-        height: "10px"
-    },
-    colors: {
-        "dark-1": "#f8f8f8",
-        "light-1": "#000000",
-        "accent-1": "#797979",
-        "accent-2": "#d7d7d7",
-        "accent-3": "#5c5c5c",
-        "accent-4": "#9FFFB0",
-        "neutral-1": "#10873D",
-        "neutral-2": "#20873D",
-        "neutral-3": "#30873D",
-        "neutral-4": "#40873D",
-        focus: "#000",
-        // Setting new colors
-        primary: "#d515d3",
-        primaryLighter: "#f2b9f2",
-        primaryDarker: "#c40cc2",
-        // you can also point to existing grommet colors
-        brightGreen: "accent-1",
-        deepGreen: "neutral-2",
-    }
+  interface PaletteOptions {
+    backgroundCard: PaletteColor;
+  }
 }
+
+const customTheme = {
+  primary: {
+    light: '#BD96FF',
+    main: '#673AB7',
+    dark: '#A678F5'
+  },
+  secondary: {
+    light: '#b5b8cf',
+    main: '#777da7',
+    dark: '#51567b'
+  },
+  warning: {
+    main: '#F9F871'
+  },
+  error: {
+    main: '#FF6F91'
+  },
 }
 
 export const themeLight = createMuiTheme({
-    palette: {
-      background: {
-        default: "#e4f0e2"
-      },
-      primary: {
-        main: '#a86cc1',
-        light: '',
-        dark: ''
-      },
-      secondary: {
-        main: '#89609e',
-        light: '',
-        dark: ''
-      },
-    }
-  });
+  palette: {
+    background: {
+      default: "#fafafa",
+      paper: "#e0e0e0"
+    },
+    text: {
+      primary: "#000000"
+    },
+    backgroundCard: {
+      light: "#fafafa",
+      main: "#f5f5f5",
+      dark: "#eeeeee",
+      contrastText: ""
+    },
+    ...customTheme
+  }
+});
 
-  export const themeDark = createMuiTheme({
-    palette: {
-      background: {
-        default: "#222222"
-      },
-      text: {
-        primary: "#ffffff"
-      },
-      primary: {
-        main: '#a86cc1',
-        light: '',
-        dark: ''
-      },
-      secondary: {
-        main: '#89609e',
-        light: '',
-        dark: ''
-      },
-    }
-  });
+export const themeDark = createMuiTheme({
+  palette: {
+    background: {
+      default: "#212121",
+      paper: "616161"
+    },
+    text: {
+      primary: "#ffffff"
+    },
+    backgroundCard: {
+      light: "#616161",
+      main: "#424242",
+      dark: "#212121",
+      contrastText: ""
+    },
+    ...customTheme
+  }
+});

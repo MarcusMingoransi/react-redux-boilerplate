@@ -3,16 +3,15 @@ Projeto utiliza: typescript, redux, hooks e tudo de top que tiver
 
 ## Roadmap
 - [x] lazy components com split
-- [ ] bootstrap-grid
+- [x] material-ui
 - [x] grommet
-- [ ] icons
 - [x] scss
-- [ ] css Fela
 - [x] routes
 - [x] routes with redux
+- [x] i18n
+- [ ] icons
 - [ ] redux-thunk
 - [ ] useCallback
-- [x] i18n
 - [ ] auth-guard
 - [ ] jwt
 - [ ] react-query

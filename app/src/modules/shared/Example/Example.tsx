@@ -34,7 +34,7 @@ const Example = () => {
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non suscipit sapiente odit autem est. Temporibus asperiores, natus sed accusantium, amet commodi culpa ut distinctio eos nulla atque ipsum. Quod, a!
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small">Learn More</Button>
+                                    <Button variant="contained" color="primary" size="small">Learn More</Button>
                                 </CardActions>
                             </Box>
                         </Card>
@@ -46,7 +46,7 @@ const Example = () => {
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non suscipit sapiente odit autem est. Temporibus asperiores, natus sed accusantium, amet commodi culpa ut distinctio eos nulla atque ipsum. Quod, a!
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small">Learn More</Button>
+                                    <Button variant="outlined" color="secondary" size="small">Learn More</Button>
                                 </CardActions>
                             </Box>
                         </Card>

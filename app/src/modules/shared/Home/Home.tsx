@@ -1,12 +1,9 @@
 import React, { useState, lazy, Suspense } from 'react'
 import './Home.css'
 import { useSelector, useDispatch } from 'react-redux'
-import { CLICK_ADD, CLICK_SUB, CLICK_SET_THEME } from "../../../store/types"
+import { CLICK_ADD, CLICK_SUB } from "../../../store/types"
 
 import { useTranslation } from 'react-i18next'
-import { Text, Box, Grommet } from 'grommet'
-
-import { customTheme, darkTheme } from "../../../shared/Theme";
 
 const Button = lazy(() => import('../../../shared/components/Button'))
 
@@ -33,14 +30,6 @@ const Home = () => {
           <p>{t('someText')}</p>
         </Suspense>
       </header>
-      <Grommet theme={themeReducer}>
-        <Box background={ {color: "light-1"} }>
-          <Text color="dark-1">Component Text</Text>
-          <p>Texto tag P</p>
-          <Button text="Set Dark Theme" onClick={ () => dispatch({type: CLICK_SET_THEME, theme: darkTheme}) } />
-          <Button text="Set Custom Theme" onClick={ () => dispatch({type: CLICK_SET_THEME, theme: customTheme}) } />
-        </Box>
-      </Grommet>
     </div>
   )
 }
