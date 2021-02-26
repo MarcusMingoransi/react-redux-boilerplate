@@ -3,9 +3,10 @@ import { useSelector, useDispatch } from 'react-redux'
 import { CLICK_SET_THEME } from "../../../store/types"
 
 import { useTranslation } from 'react-i18next'
-import Button from '@material-ui/core/Button';
-import { Grid, Paper, Container, Card, CardContent, CardActions, Box, Typography } from '@material-ui/core';
-import ExampleTable from './ExampleTable';
+import Button from '@material-ui/core/Button'
+import { Grid, Paper, Container, Card, CardContent, CardActions, Box, Typography } from '@material-ui/core'
+import ExampleTable from './ExampleTable'
+import { FaBeer } from 'react-icons/fa'
 
 const Example = () => {
     const themeReducer = useSelector((state: any) => state.themeReducer)
@@ -16,6 +17,7 @@ const Example = () => {
 
     return (
         <>
+        <FaBeer />
             <Button
                 color="primary"
                 onClick={() => dispatch({type: CLICK_SET_THEME, theme: true })}>Set Light</Button>

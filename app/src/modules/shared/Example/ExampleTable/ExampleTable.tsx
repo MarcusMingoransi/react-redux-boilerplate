@@ -1,20 +1,24 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TablePagination from '@material-ui/core/TablePagination';
-import TableRow from '@material-ui/core/TableRow';
+import React, { useEffect, useState } from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+
+// components
+import Paper from '@material-ui/core/Paper'
+import Table from '@material-ui/core/Table'
+import TableBody from '@material-ui/core/TableBody'
+import TableCell from '@material-ui/core/TableCell'
+import TableContainer from '@material-ui/core/TableContainer'
+import TableHead from '@material-ui/core/TableHead'
+import TablePagination from '@material-ui/core/TablePagination'
+import TableRow from '@material-ui/core/TableRow'
+
+import { requestGrid } from "../requests"
 
 interface Column {
-  id: 'name' | 'code' | 'population' | 'size' | 'density';
-  label: string;
-  minWidth?: number;
-  align?: 'right';
-  format?: (value: number) => string;
+  id: 'name' | 'code' | 'population' | 'size' | 'density'
+  label: string
+  minWidth?: number
+  align?: 'right'
+  format?: (value: number) => string
 }
 
 const columns: Column[] = [
@@ -41,19 +45,19 @@ const columns: Column[] = [
     align: 'right',
     format: (value: number) => value.toFixed(2),
   },
-];
+]
 
 interface Data {
-  name: string;
-  code: string;
-  population: number;
-  size: number;
-  density: number;
+  name: string
+  code: string
+  population: number
+  size: number
+  density: number
 }
 
 function createData(name: string, code: string, population: number, size: number): Data {
-  const density = population / size;
-  return { name, code, population, size, density };
+  const density = population / size
+  return { name, code, population, size, density }
 }
 
 const rows = [
@@ -72,7 +76,7 @@ const rows = [
   createData('Russia', 'RU', 146793744, 17098246),
   createData('Nigeria', 'NG', 200962417, 923768),
   createData('Brazil', 'BR', 210147125, 8515767),
-];
+]
 
 const useStyles = makeStyles({
   root: {
@@ -81,21 +85,37 @@ const useStyles = makeStyles({
   container: {
     maxHeight: 440,
   },
-});
+})
 
 const ExampleTable = () => {
-  const classes = useStyles();
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const classes = useStyles()
+  const [dataGrid, setGrid] = useState([]) as any[]
+  const [page, setPage] = React.useState(0)
+  const [rowsPerPage, setRowsPerPage] = React.useState(10)
 
   const handleChangePage = (event: unknown, newPage: number) => {
-    setPage(newPage);
-  };
+    setPage(newPage)
+  }
 
   const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
+    setRowsPerPage(+event.target.value)
+    setPage(0)
+  }
+
+  useEffect(() => {
+    requestGrid().then(data => {
+      console.log('data', data)
+      setGrid(data.data.cards)
+    })
+    // setGrid(data)
+    // console.log('dataGrid', dataGrid)
+  }, [])
+  // useEffect(() => {
+  //   const data = requestGrid()
+  //   console.log('data', data)
+  //   setGrid(data)
+  //   console.log('dataGrid', dataGrid)
+  // }, [])
 
   return (
     <Paper className={classes.root}>
@@ -119,15 +139,15 @@ const ExampleTable = () => {
               return (
                 <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
                   {columns.map((column) => {
-                    const value = row[column.id];
+                    const value = row[column.id]
                     return (
                       <TableCell key={column.id} align={column.align}>
                         {column.format && typeof value === 'number' ? column.format(value) : value}
                       </TableCell>
-                    );
+                    )
                   })}
                 </TableRow>
-              );
+              )
             })}
           </TableBody>
         </Table>
@@ -142,7 +162,7 @@ const ExampleTable = () => {
         onChangeRowsPerPage={handleChangeRowsPerPage}
       />
     </Paper>
-  );
+  )
 }
 
 export default ExampleTable
