@@ -2,13 +2,13 @@ import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
 import Backend from 'i18next-http-backend'
-import LanguageDetector from 'i18next-browser-languagedetector';
+import LanguageDetector from 'i18next-browser-languagedetector'
 
 // import sharedTranslatePT from "../public/locales/pt/shared.json"
 // import sharedTranslateEN from "../public/locales/en/shared.json"
 // import moduleATranslationEN from "../public/locales/en/moduleA.json"
 // not like to use this?
-// have a look at the Quick start guide 
+// have a look at the Quick start guide
 // for passing in lng and translations on init
 
 i18n
@@ -27,13 +27,12 @@ i18n
     debug: true,
     detection: {
       order: ['queryString', 'cookie'],
-      cache: ['cookie']
+      cache: ['cookie'],
     },
 
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
-    }
-  });
+    },
+  })
 
-
-export default i18n;
+export default i18n

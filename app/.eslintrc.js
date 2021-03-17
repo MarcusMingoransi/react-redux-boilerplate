@@ -3,14 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: [
-    'airbnb',
-    'airbnb/hooks',
-    'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
-    'prettier',
-    'prettier/react',
-  ],
+  extends: ['prettier'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -36,17 +29,17 @@ module.exports = {
 
     'import/prefer-default-export': 'off',
     'import/order': 'off',
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
-      },
-    ],
+    // 'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    // 'import/extensions': [
+    //   'error',
+    //   'ignorePackages',
+    //   {
+    //     js: 'never',
+    //     jsx: 'never',
+    //     ts: 'never',
+    //     tsx: 'never',
+    //   },
+    // ],
 
     'class-methods-use-this': 'off',
     'no-plusplus': 'off',

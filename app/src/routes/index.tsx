@@ -12,13 +12,13 @@ const RoutesTheme = () => {
   const themeReducer = useSelector((state: any) => state.themeReducer)
   console.log('Routes: themeReducer', themeReducer)
 
-  return(
+  return (
     <MuiThemeProvider theme={themeReducer ? themeLight : themeDark}>
       <CssBaseline />
-      <Suspense fallback="loading">
+      <Suspense fallback='loading'>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/example" component={Example} />
+          <Route exact path='/' component={Home} />
+          <Route exact path='/example' component={Example} />
           <Route component={NoMatch} />
         </Switch>
       </Suspense>
@@ -26,8 +26,6 @@ const RoutesTheme = () => {
   )
 }
 
-const routes = (
-  <RoutesTheme />
-)
+const routes = <RoutesTheme />
 
 export default routes

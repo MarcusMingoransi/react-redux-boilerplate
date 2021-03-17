@@ -1,2 +1,2 @@
-import NoMatch from "./NoMatch"
+import NoMatch from './NoMatch'
 export default NoMatch

@@ -1,4 +1,4 @@
-import { get, post } from "../../../shared/http"
+import { get, post } from '../../../shared/http'
 
 // export const requestGrid = (): any[] => {
 //     get('https://api.pokemontcg.io/v1/cards')
@@ -11,5 +11,5 @@ import { get, post } from "../../../shared/http"
 // }
 
 export const requestGrid = async (): Promise<any> => {
-    return await get('https://api.pokemontcg.io/v1/cards')
+  return await get('https://api.pokemontcg.io/v1/cards')
 }

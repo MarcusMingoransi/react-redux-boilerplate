@@ -10,11 +10,11 @@ Projeto utiliza: typescript, redux, hooks e tudo de top que tiver
 - [x] routes
 - [x] routes with redux
 - [x] i18n
+- [x] eslint/prettier
+- [x] icons
 - [ ] context api
 - [ ] react-query
 - [ ] jest
-- [ ] eslint/prettier
-- [ ] icons
 - [ ] redux-thunk
 - [ ] auth-guard
 - [ ] jwt
