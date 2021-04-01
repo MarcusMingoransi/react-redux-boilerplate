@@ -1,4 +1,3 @@
-import 'jest'
 import { sum } from '../utils'
 
 // const sum = (a, b) => a + b
