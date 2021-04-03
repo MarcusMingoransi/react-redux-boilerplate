@@ -11,7 +11,7 @@ import TableHead from '@material-ui/core/TableHead'
 import TablePagination from '@material-ui/core/TablePagination'
 import TableRow from '@material-ui/core/TableRow'
 
-import { requestGrid } from '../requests'
+import { requestGrid, useRequestGrid } from '../requests'
 
 interface Column {
   id: 'name' | 'code' | 'population' | 'size' | 'density'
@@ -98,6 +98,9 @@ const ExampleTable = () => {
   const [page, setPage] = React.useState(0)
   const [rowsPerPage, setRowsPerPage] = React.useState(10)
 
+  const { data, isFetching } = useRequestGrid()
+  console.log('data', data)
+
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage)
   }
@@ -108,21 +111,6 @@ const ExampleTable = () => {
     setRowsPerPage(+event.target.value)
     setPage(0)
   }
-
-  useEffect(() => {
-    requestGrid().then(data => {
-      console.log('data', data)
-      setGrid(data.data.cards)
-    })
-    // setGrid(data)
-    // console.log('dataGrid', dataGrid)
-  }, [])
-  // useEffect(() => {
-  //   const data = requestGrid()
-  //   console.log('data', data)
-  //   setGrid(data)
-  //   console.log('dataGrid', dataGrid)
-  // }, [])
 
   return (
     <Paper className={classes.root}>

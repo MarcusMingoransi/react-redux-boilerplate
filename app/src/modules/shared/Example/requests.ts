@@ -1,3 +1,4 @@
+import { useQuery } from 'react-query'
 import { get, post } from '../../../shared/http'
 
 // export const requestGrid = (): any[] => {
@@ -12,4 +13,12 @@ import { get, post } from '../../../shared/http'
 
 export const requestGrid = async (): Promise<any> => {
   return await get('https://api.pokemontcg.io/v1/cards')
+}
+
+export const useRequestGrid = () => {
+  const { data, isFetching, error, status } = useQuery(
+    '@requestGrid',
+    requestGrid,
+  )
+  return { data, isFetching, error, status }
 }
