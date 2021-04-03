@@ -12,9 +12,9 @@ Projeto utiliza: typescript, redux, hooks e tudo de top que tiver
 - [x] i18n
 - [x] eslint/prettier
 - [x] icons
+- [x] jest
 - [ ] context api
 - [ ] react-query
-- [ ] jest
 - [ ] redux-thunk
 - [ ] auth-guard
 - [ ] jwt

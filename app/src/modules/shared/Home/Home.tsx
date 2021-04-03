@@ -8,8 +8,8 @@ import { useTranslation } from 'react-i18next'
 const Button = lazy(() => import('../../../shared/components/Button'))
 
 const Home = () => {
-  const counterReducer = useSelector(state => state.counterReducer)
-  const themeReducer = useSelector(state => state.themeReducer)
+  const counterReducer = useSelector((state: any) => state.counterReducer)
+  const themeReducer = useSelector((state: any) => state.themeReducer)
   console.log('themeReducer', themeReducer)
   const dispatch = useDispatch()
   const [count, setCount] = useState(0)

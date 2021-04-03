@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense } from 'react'
+import React, { useState, lazy, Suspense, useContext } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { CLICK_SET_THEME } from '../../../store/types'
 
@@ -16,28 +16,18 @@ import {
 } from '@material-ui/core'
 import ExampleTable from './ExampleTable'
 import { FaBeer } from 'react-icons/fa'
+import { AppContext } from '../../../routes/AppContext'
 
 const Example = () => {
-  const themeReducer = useSelector((state: any) => state.themeReducer)
-  console.log('themeReducer', themeReducer)
-  const dispatch = useDispatch()
+  const { theme, toggleTheme } = useContext(AppContext)
 
   const [shared] = useTranslation()
 
   return (
     <>
       <FaBeer />
-      <Button
-        color='primary'
-        onClick={() => dispatch({ type: CLICK_SET_THEME, theme: true })}
-      >
-        Set Light
-      </Button>
-      <Button
-        color='secondary'
-        onClick={() => dispatch({ type: CLICK_SET_THEME, theme: false })}
-      >
-        Set Dark
+      <Button color='primary' onClick={toggleTheme}>
+        Toggle Theme
       </Button>
 
       <Container fixed>
